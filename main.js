@@ -1,7 +1,6 @@
 const gridItems = document.querySelectorAll('.grid-item');
 
-// newElement.textContent = "hello";
-
+// SETS THE DESCRIPTION BY ID
 const setDescription = (element, newElement) => {
     console.log();
     switch(element.id){
@@ -20,28 +19,33 @@ const setDescription = (element, newElement) => {
     }
 };  
 
+
 gridItems.forEach(gridItem => {
     const element = gridItem;
-    // TOGGLES BIG AND SMALL GRID ITEM
+    // TOGGLES GRID DESCRIPTION
     gridItem.addEventListener('click', () => {
-        console.log(element);
-        const newElement = document.createElement('div');
+        // console.log(element);
         
+        // CREATES A NEW DESCRIPTION ELEMENT FOR EVERY CLICK
+        const newElement = document.createElement('div');
         newElement.classList.add('flex-item');
         newElement.classList.add('flex');
         newElement.innerHTML = "<h3></h3>";
         setDescription(element, newElement);
         console.log(newElement.textContent);
 
+        // IF THE ELEMENT IS ALREADY ACTIVATED
         if(element.classList.contains('active')){
             console.log(element);
             element.classList.remove('active');
             const child = element.lastElementChild;
             element.removeChild(child);
         }
+        // IF THE ELEMENT IS NOT ACTIVED
         else{
             console.log(element);
             element.classList.add('active');
+            // adds the new element before the end of the current instance
             element.insertAdjacentElement('beforeend', newElement);
         }
         
