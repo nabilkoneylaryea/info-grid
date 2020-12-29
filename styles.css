@@ -1,0 +1,51 @@
+body{
+    background: #fff;
+    color: transparent;
+    font: 16px monospace;
+}
+img{
+    height: 100px;
+    width: auto;
+}
+.grid{
+    /* THIS COMBO WILL GIVE YOU SIZE OF WHOLE VIEWPORT */
+    height: 100vh;
+    width:auto;
+    box-sizing: border-box;
+    overflow: hidden;
+    background-image: url(images/coding-background-2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 5px;
+    padding: 10px;
+}
+.grid-item{
+    border: 1px solid #f4f4f4;
+    border-radius: 5px;
+    padding: 0 30px;
+    transition: .5s;
+}
+.grid-item:hover{
+    backdrop-filter: blur(7px);
+    color: #fff;
+    cursor: pointer;
+}
+.grid-item:active{
+    backdrop-filter: blur(7px);
+    color: transparent;
+}
+.flex{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.active{
+    backdrop-filter: blur(7px);
+    color: #fff;
+    text-align: center;
+}
